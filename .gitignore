@@ -1,3 +1,4 @@
 .idea
 firefly-pytest-env
 output
+__pycache__/

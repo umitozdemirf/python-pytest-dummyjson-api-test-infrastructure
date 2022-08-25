@@ -3,8 +3,11 @@ import pytest
 from service.products.products_service import ProductService as product_service
 from service.carts.carts_service import CartsService as carts_service
 
+from model.customer import USER_ID_LIST
+from utils.assertion.assertion import Assertion as assertion
 
-class TestProducts:
+
+class TestCustomers:
     """Products tests - """
 
     @pytest.mark.usefixtures('run_services')
@@ -27,3 +30,5 @@ class TestProducts:
                 item = list(filter(lambda x: x["id"] == i, j['products']))
                 if len(item) != 0:
                     matched_carts_user_ids.append(j['userId'])
+
+        assertion.is_equals("UserID", matched_carts_user_ids, sorted(USER_ID_LIST))
