@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "8f9d9908-bea8-4634-bbd2-57832cb23670",
+		"name": "Ümit Özdemir - FireFly Case Study",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22924829"
+	},
+	"item": [
+		{
+			"name": "getProducts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();",
+							"pm.test(\"Response is not null\", function () {",
+							"    pm.response.to.have.not.null",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response parameter check\", function () {",
+							"    pm.expect(response.products).to.be.not.null",
+							"    pm.expect(response.total).to.be.not.null",
+							"    pm.expect(response.skip).to.be.not.null",
+							"    pm.expect(response.limit).to.be.not.null",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
