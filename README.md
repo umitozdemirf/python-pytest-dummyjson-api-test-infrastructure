@@ -1,5 +1,5 @@
-<h1>Firefly Pytest API Automation Project</h1>
-This project is prepared for the Firefly recruitment process.
+<h1>Pytest API Automation Project</h1>
+This project is prepared for the self improvement.
 <h2>Tool stack</h2>
 
 * Python
